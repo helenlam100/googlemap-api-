@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Places Search Demo</title>
+    <link rel="stylesheet" type="text/css"
+          href="https://google-developers.appspot.com/css/screen.css">  <!--this makes the map look pretty, loading that stylesheet onto ours-->
+    <link rel="stylesheet"
+          href="https://www.google.com/cse/style/look/default.css" type="text/css">
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"> //The type attribute identifies the content between the <script> and //<//script> tags.Here we access googlemap  API.
+    </script>
+    <script type="text/javascript"
+        src="./map.js">
+    </script>
+
+    <link rel="stylesheet"
+      href="./style.css" type="text/css">
+
+  </head>
+
+  <body class="docs framebox_body">
+    <div id="container">
+      <div>
+        <form name="controls">
+          <div style="margin-top: 5px">
+            Keyword:
+          </div>
+          <div style="margin-left: 9px">
+            <input id="keyword" type="text" onkeyup="updateKeyword(event)"
+                   onkeydown="blockEvent(event)" style="width:110px">
+          </div>
+          <div style="margin-top: 5px">
+            Types:
+          </div>
+          <div style="margin-left: 9px">
+            <input type="checkbox" name="type" value="store"
+                   onclick="updateRankByCheckbox()" /> store<br/>
+            <input type="checkbox" name="type" value="clothing_store"
+                   onclick="updateRankByCheckbox()" /> clothing_store<br/>
+            <input type="checkbox" name="type" value="restaurant"
+                   onclick="updateRankByCheckbox()" /> restaurant<br>
+            <input type="checkbox" name="type" value="lodging"
+                   onclick="updateRankByCheckbox()" /> lodging<br>
+            <input type="checkbox" name="type" value="museum"
+                   onclick="updateRankByCheckbox()" /> museum<br>
+            <input type="checkbox" name="type" value="cafe"
+                    onclick="updateRankByCheckbox()" /> cafe<br>
+          </div>
+          <div id="rankbylabel" style="margin-top: 5px; color: #cccccc">
+            <input type="checkbox" disabled="true"
+                   name="rankbydistance" /> Rank by distance
+          </div>
+          <div style="margin-top: 5px">
+            <input type="submit" value="Search" onclick="search(event)" />
+          </div>
+        </form>
+      </div>
+    <div id="map_canvas"></div>
+    <div id="listing">
+      <table id="results"></table>
+    </div>
+  </body>
+</html>

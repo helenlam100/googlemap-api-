@@ -1,0 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: arial;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+#container {
+  margin-top: 6px;
+  margin-left: 6px
+}
+
+#map_canvas {
+  float: left;
+  width: 320px;
+  height: 406px;
+  margin-top: 13px;
+}
+
+#listing {
+  float: left;
+  margin-left: 1px;
+  margin-top: 13px;
+  width: 200px;
+  height: 406px;
+  overflow: auto;
+  cursor: pointer;
+}
+
+#controls {
+  padding: 5px;
+}
+.placeIcon {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+}
+
+#results {
+  border-collapse: collapse;
+  width: 184px;
+}
